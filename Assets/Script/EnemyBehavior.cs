@@ -23,6 +23,11 @@ public class EnemyBehavior : MonoBehaviour
     void Update()
     {
         MoveDown();
+        // delete gameObject when leaves screen 
+        if (transform.position.y < -7)
+        {
+            Destroy (gameObject);
+        }
     }
 
     public void MoveDown()
