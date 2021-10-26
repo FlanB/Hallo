@@ -756,6 +756,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8750058157502730426, guid: 71de30c08b90d63459fed0b8770c4127, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7241394210409349445, guid: 71de30c08b90d63459fed0b8770c4127, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7241394210409349448, guid: 71de30c08b90d63459fed0b8770c4127, type: 3}
       propertyPath: m_Name
       value: Shield
@@ -803,6 +811,18 @@ PrefabInstance:
     - target: {fileID: 7241394210409349450, guid: 71de30c08b90d63459fed0b8770c4127, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7241394210409349451, guid: 71de30c08b90d63459fed0b8770c4127, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7241394210409349451, guid: 71de30c08b90d63459fed0b8770c4127, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7241394210409349451, guid: 71de30c08b90d63459fed0b8770c4127, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71de30c08b90d63459fed0b8770c4127, type: 3}
