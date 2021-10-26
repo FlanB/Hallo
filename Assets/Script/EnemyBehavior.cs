@@ -48,6 +48,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         DefenseBehavior DB =
             collider.gameObject.GetComponent<DefenseBehavior>();
+
         while (DB.getHealth() > 0)
         {
             DB.TakeDamage (strength);

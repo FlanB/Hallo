@@ -101,7 +101,7 @@ MonoBehaviour:
   speed: 2
   health: 5
   strength: 5
-  player: {fileID: 7241394210409349448, guid: 71de30c08b90d63459fed0b8770c4127, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!50 &-4421262232429659590
 Rigidbody2D:
   serializedVersion: 4
