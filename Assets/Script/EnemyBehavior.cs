@@ -55,4 +55,9 @@ public class EnemyBehavior : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+    }
 }
