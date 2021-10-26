@@ -16,6 +16,9 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField]
     private int strength;
 
+    [SerializeField]
+    private GameObject player;
+
     void Start()
     {
     }
@@ -23,8 +26,9 @@ public class EnemyBehavior : MonoBehaviour
     void Update()
     {
         MoveDown();
-        // delete gameObject when leaves screen 
-        if (transform.position.y < -7)
+
+        // delete gameObject when leaves screen
+        if (transform.position.y < -7 || health <= 0)
         {
             Destroy (gameObject);
         }
@@ -33,5 +37,27 @@ public class EnemyBehavior : MonoBehaviour
     public void MoveDown()
     {
         rb2d.velocity = new Vector2(0, -speed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.gameObject.tag == "Defense")
+        {
+            StartCoroutine(Attack(collider));
+        }
+    }
+
+    private IEnumerator Attack(Collision2D collider)
+    {
+
+        // int health = player.getHealth();
+        // while (player.getHealth() >= 0)
+        // {
+            collider
+                .gameObject
+                .GetComponent<DefenseBehavior>()
+                .TakeDamage(strength);
+            yield return new WaitForSeconds(1);
+        // }
     }
 }
