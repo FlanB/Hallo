@@ -4,15 +4,62 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject enemy;
+
+    [SerializeField]
+    private float spawnTime;
+
+    [SerializeField]
+    private int maxEnemies;
+
+    private int spawnColumn;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(SpawnEnemy());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    IEnumerator SpawnEnemy()
+    {
+        for (int i = 0; i < maxEnemies; i++)
+        {
+            spawnColumn = Random.Range(0, 4);
+
+            switch (spawnColumn)
+            {
+                case 0:
+                    Instantiate(enemy,
+                    new Vector2(-2.25f, 5),
+                    Quaternion.identity);
+                    break;
+                case 1:
+                    Instantiate(enemy,
+                    new Vector2(-1.15f, 5),
+                    Quaternion.identity);
+                    break;
+                case 2:
+                    Instantiate(enemy, new Vector2(0, 5), Quaternion.identity);
+                    break;
+                case 3:
+                    Instantiate(enemy,
+                    new Vector2(1.15f, 5),
+                    Quaternion.identity);
+                    break;
+                case 4:
+                    Instantiate(enemy,
+                    new Vector2(2.25f, 5),
+                    Quaternion.identity);
+                    break;
+            }
+
+            yield return new WaitForSeconds(spawnTime);
+        }
     }
 }
