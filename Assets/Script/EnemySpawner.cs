@@ -30,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < maxEnemies; i++)
         {
+            // spawn enemy in 5 columns
             switch (Random.Range(0, 4))
             {
                 case 0:
