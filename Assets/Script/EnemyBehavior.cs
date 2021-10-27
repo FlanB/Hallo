@@ -16,9 +16,6 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField]
     private int strength;
 
-    [SerializeField]
-    private GameObject player;
-
     void Start()
     {
     }
@@ -49,15 +46,18 @@ public class EnemyBehavior : MonoBehaviour
 
     private IEnumerator Attack(Collision2D collider)
     {
+        DefenseBehavior DB =
+            collider.gameObject.GetComponent<DefenseBehavior>();
 
-        // int health = player.getHealth();
-        // while (player.getHealth() >= 0)
-        // {
-            collider
-                .gameObject
-                .GetComponent<DefenseBehavior>()
-                .TakeDamage(strength);
+        while (DB.getHealth() > 0)
+        {
+            DB.TakeDamage (strength);
             yield return new WaitForSeconds(1);
-        // }
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
     }
 }
