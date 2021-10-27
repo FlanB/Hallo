@@ -23,8 +23,12 @@ public class EnemyBehavior : MonoBehaviour
         // delete gameObject when leaves screen
         if (transform.position.y < -7 || health <= 0)
         {
-            Destroy (gameObject);
+            LifeToZero();
         }
+    }
+
+    public virtual void LifeToZero() {
+        Destroy (gameObject);
     }
 
     public void MoveDown()
