@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 662702654487115160}
-  speed: 10
-  health: 12
+  speed: 1
+  health: 0
   strength: 10
+  skeletonToSpawn: {fileID: 2536552465113431094, guid: 63322ba390ea0454d8d23f6f0495e752, type: 3}

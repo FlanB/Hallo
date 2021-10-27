@@ -9,14 +9,15 @@ public class JakoBehavior : EnemyBehavior
         // Start is called before the first frame update
     void Start()
     {
-       // LifeToZero();
     }
 
     public override void LifeToZero()
     {
-        GameObject newSkeleton1 = Instantiate(skeletonToSpawn);
-        newSkeleton1.transform.position = this.transform.position;
-        base.LifeToZero();
+        for (int i = 0; i < 2; i++)
+        {
+            Instantiate(skeletonToSpawn, transform.position, Quaternion.identity);
+        }
+            base.LifeToZero();
 
     }
 
