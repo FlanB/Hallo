@@ -9,7 +9,12 @@ public class TurretBehavior : DefenseBehavior
     [SerializeField]
     private int projectileFrequency;
 
-       private IEnumerator Shoot()
+    void Start()
+    {
+        StartCoroutine(Shoot());
+    }
+
+    private IEnumerator Shoot()
     {
         while (true)
         {
