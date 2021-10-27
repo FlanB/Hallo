@@ -15,17 +15,14 @@ public class EnemySpawner : MonoBehaviour
 
     private GameObject[] columns;
 
+    [SerializeField]
+    private GameObject[] enemies;
+
     // Start is called before the first frame update
     void Start()
     {
         columns = GameObject.FindGameObjectsWithTag("Column");
         StartCoroutine(SpawnEnemy());
-        Debug.Log(columns.Length);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     IEnumerator SpawnEnemy()
