@@ -1,7 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Prefabs.meta
 guid: 8109944fb8c5c3f42a02d8f5d5ca50b7
 folderAsset: yes
 DefaultImporter:
+========
+guid: 63322ba390ea0454d8d23f6f0495e752
+PrefabImporter:
+>>>>>>>> 98922cd86506897b04d50f6cbd9cf47dd060412b:Assets/Prefabs/Skeleton.prefab.meta
+=======
+guid: 8109944fb8c5c3f42a02d8f5d5ca50b7
+folderAsset: yes
+DefaultImporter:
+>>>>>>> 98922cd86506897b04d50f6cbd9cf47dd060412b
   externalObjects: {}
   userData: 
   assetBundleName: 

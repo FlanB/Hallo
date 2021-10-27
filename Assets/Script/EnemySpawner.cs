@@ -5,9 +5,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject enemy;
-
-    [SerializeField]
     private float spawnTime;
 
     [SerializeField]
@@ -18,7 +15,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject[] enemies;
 
-    // Start is called before the first frame update
     void Start()
     {
         columns = GameObject.FindGameObjectsWithTag("Column");
@@ -29,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < maxEnemies; i++)
         {
-            Instantiate(enemy,
+            Instantiate(enemies[Random.Range(0, enemies.Length)],
             columns[Random.Range(0, 4)].transform.position,
             Quaternion.identity);
 
