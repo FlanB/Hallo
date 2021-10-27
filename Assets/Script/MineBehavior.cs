@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class MineBehavior : DefenseBehavior
 {
-    void Update()
-    {
-    }
-
     private void OnCollisionEnter2D(Collision2D collider)
     {
         if (collider.gameObject.tag == "Enemy")
