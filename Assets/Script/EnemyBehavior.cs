@@ -16,10 +16,6 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField]
     private int strength;
 
-    void Start()
-    {
-    }
-
     void Update()
     {
         MoveDown();
@@ -51,7 +47,7 @@ public class EnemyBehavior : MonoBehaviour
 
         while (DB.getHealth() > 0)
         {
-            DB.TakeDamage (strength);
+            DB.TakeDamage(strength);
             yield return new WaitForSeconds(1);
         }
     }

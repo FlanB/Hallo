@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: -4421262232429659590}
-  speed: 2
-  health: 5
-  strength: 5
+  speed: 5
+  health: 2
+  strength: 2
 --- !u!50 &-4421262232429659590
 Rigidbody2D:
   serializedVersion: 4
