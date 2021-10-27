@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Defense
   - Enemy
+  - Column
   layers:
   - Default
   - TransparentFX
