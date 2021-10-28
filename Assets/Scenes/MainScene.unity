@@ -235,8 +235,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 2
+<<<<<<< HEAD
   maxEnemies: 0
   enemies: []
+=======
+  incrementWaveStrength: 30
+  type1ToType2: 6
+  type2ToType3: 6
+  type1Enemies:
+  - {fileID: 2536552465113431094, guid: d491c58d6d381a142b9359b4fca43c69, type: 3}
+  type2Enemies:
+  - {fileID: 3944147676738734925, guid: 078b615900a786c4092cd2c35784cd34, type: 3}
+  type3Enemies:
+  - {fileID: 662702654487115140, guid: da9b7730ed85a244e9a51912e7ec22af, type: 3}
+>>>>>>> 0cd2a22ce62da5f0d73c050af28aff0a6e5fc42c
 --- !u!4 &56257967
 Transform:
   m_ObjectHideFlags: 0
