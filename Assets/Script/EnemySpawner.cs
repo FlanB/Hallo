@@ -10,6 +10,12 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private int incrementWaveStrength;
 
+    [SerializeField]
+    private int type1ToType2;
+
+    [SerializeField]
+    private int type2ToType3;
+
     private GameObject[] columns;
 
     [SerializeField]
@@ -27,26 +33,20 @@ public class EnemySpawner : MonoBehaviour
 
     private int type3;
 
-    [SerializeField]
-    private int type1ToType2;
-
-    [SerializeField]
-    private int type2ToType3;
-
     void Start()
     {
         type1 = incrementWaveStrength;
-        while (type1 >= un || type2 >= deux)
+        while (type1 >= type1ToType2 || type2 >= type2ToType3)
         {
-            if (type1 >= un)
+            if (type1 >= type1ToType2)
             {
                 type2++;
-                type1 -= un;
+                type1 -= type1ToType2;
             }
-            else if (type2 >= deux)
+            else if (type2 >= type2ToType3)
             {
                 type3++;
-                type2 -= deux;
+                type2 -= type2ToType3;
             }
         }
         columns = GameObject.FindGameObjectsWithTag("Column");

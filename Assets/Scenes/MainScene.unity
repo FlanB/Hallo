@@ -236,6 +236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTime: 2
   incrementWaveStrength: 30
+  type1ToType2: 6
+  type2ToType3: 6
   type1Enemies:
   - {fileID: 2536552465113431094, guid: d491c58d6d381a142b9359b4fca43c69, type: 3}
   type2Enemies:
