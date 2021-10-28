@@ -18,7 +18,6 @@ public class LifeBehavior : MonoBehaviour
     {
         //passage en pourcentage
         life = life - damage;
-        Debug.Log (life);
         transform.localScale = new Vector3(life / totalLife, 1, 1);
     }
 }
