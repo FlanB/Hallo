@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -27,13 +28,35 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject[] type3Enemies;
 
+    [SerializeField]
+    private Text waveText;
+
+    [SerializeField]
+    private Text chrono;
+
     private int type1;
 
     private int type2;
 
     private int type3;
 
-    void Start()
+    private int wave = 1;
+
+    private float time;
+
+    private void Start()
+    {
+        Converter();
+        columns = GameObject.FindGameObjectsWithTag("Column");
+        StartCoroutine(SpawnEnemy());
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+    }
+
+    private void Converter()
     {
         type1 = incrementWaveStrength;
         while (type1 >= type1ToType2 || type2 >= type2ToType3)
@@ -49,15 +72,6 @@ public class EnemySpawner : MonoBehaviour
                 type2 -= type2ToType3;
             }
         }
-        Debug
-            .Log("Type 1: " +
-            type1 +
-            " Type 2: " +
-            type2 +
-            " Type 3: " +
-            type3);
-        columns = GameObject.FindGameObjectsWithTag("Column");
-        StartCoroutine(SpawnEnemy());
     }
 
     IEnumerator SpawnEnemy()
@@ -91,5 +105,29 @@ public class EnemySpawner : MonoBehaviour
                 yield return new WaitForSeconds(spawnTime);
             }
         }
+        StartCoroutine(WaveTransition());
+    }
+
+    private IEnumerator WaveTransition()
+    {
+        StartCoroutine(Chrono());
+        yield return new WaitForSeconds(wave * 10);
+        incrementWaveStrength *= 2;
+        wave++;
+        waveText.text = "Vague " + (wave);
+        Converter();
+        StartCoroutine(SpawnEnemy());
+    }
+
+    private IEnumerator Chrono()
+    {
+        float minusTime = wave * 10;
+        float deltaTime = time;
+        while (time < deltaTime + minusTime)
+        {
+            chrono.text = Mathf.Round(minusTime - (time - deltaTime)) + "s";
+            yield return new WaitForSeconds(1);
+        }
+        chrono.text = "0s";
     }
 }

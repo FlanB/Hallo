@@ -8,7 +8,7 @@ public class EnemyBehavior : MonoBehaviour
     private Rigidbody2D rb2d;
 
     [SerializeField]
-    private int speed;
+    private float speed;
 
     [SerializeField]
     private int health;
@@ -26,7 +26,11 @@ public class EnemyBehavior : MonoBehaviour
 
         if (transform.position.y < -5)
         {
-            StartCoroutine(FlashCamera());
+            GameObject
+                .Find("Ancre")
+                .GetComponent<LifeBehavior>()
+                .LoseLife(health);
+            LifeToZero();
         }
         if (health <= 0)
         {
@@ -75,7 +79,6 @@ public class EnemyBehavior : MonoBehaviour
         other.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         other.color = Color.white;
-
     }
 
     private IEnumerator FlashCamera()
