@@ -49,6 +49,13 @@ public class EnemySpawner : MonoBehaviour
                 type2 -= type2ToType3;
             }
         }
+        Debug
+            .Log("Type 1: " +
+            type1 +
+            " Type 2: " +
+            type2 +
+            " Type 3: " +
+            type3);
         columns = GameObject.FindGameObjectsWithTag("Column");
         StartCoroutine(SpawnEnemy());
     }
