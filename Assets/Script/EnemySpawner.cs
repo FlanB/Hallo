@@ -31,6 +31,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private Text waveText;
 
+    [SerializeField]
+    private Text chrono;
+
     private int type1;
 
     private int type2;
@@ -39,11 +42,18 @@ public class EnemySpawner : MonoBehaviour
 
     private int wave = 1;
 
-    void Start()
+    private float time;
+
+    private void Start()
     {
         Converter();
         columns = GameObject.FindGameObjectsWithTag("Column");
         StartCoroutine(SpawnEnemy());
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
     }
 
     private void Converter()
@@ -95,10 +105,29 @@ public class EnemySpawner : MonoBehaviour
                 yield return new WaitForSeconds(spawnTime);
             }
         }
+        StartCoroutine(WaveTransition());
+    }
+
+    private IEnumerator WaveTransition()
+    {
+        StartCoroutine(Chrono());
+        yield return new WaitForSeconds(wave * 10);
         incrementWaveStrength *= 2;
         wave++;
         waveText.text = "Vague " + (wave);
         Converter();
         StartCoroutine(SpawnEnemy());
+    }
+
+    private IEnumerator Chrono()
+    {
+        float minusTime = wave * 10;
+        float deltaTime = time;
+        while (time < deltaTime + minusTime)
+        {
+            chrono.text = Mathf.Round(minusTime - (time - deltaTime)) + "s";
+            yield return new WaitForSeconds(1);
+        }
+        chrono.text = "0s";
     }
 }

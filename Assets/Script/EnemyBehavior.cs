@@ -8,7 +8,7 @@ public class EnemyBehavior : MonoBehaviour
     private Rigidbody2D rb2d;
 
     [SerializeField]
-    private int speed;
+    private float speed;
 
     [SerializeField]
     private int health;
