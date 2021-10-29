@@ -84,7 +84,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 type1--;
                 Instantiate(type1Enemies[Random.Range(0, type1Enemies.Length)],
-                columns[Random.Range(0, 4)].transform.position,
+                columns[Random.Range(0, 5)].transform.position,
                 Quaternion.identity);
                 yield return new WaitForSeconds(spawnTime);
             }
@@ -111,7 +111,7 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator WaveTransition()
     {
         StartCoroutine(Chrono());
-        yield return new WaitForSeconds(wave * 10);
+        yield return new WaitForSeconds(wave * 2);
         incrementWaveStrength *= 2;
         wave++;
         waveText.text = "Vague " + (wave);
@@ -121,7 +121,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator Chrono()
     {
-        float minusTime = wave * 10;
+        float minusTime = wave * 2;
         float deltaTime = time;
         while (time < deltaTime + minusTime)
         {
