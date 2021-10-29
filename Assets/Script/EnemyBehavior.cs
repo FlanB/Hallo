@@ -16,9 +16,7 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField]
     private int strength;
 
-    void Start()
-    {
-    }
+  
 
     void Update()
     {
@@ -34,6 +32,10 @@ public class EnemyBehavior : MonoBehaviour
         }
         if (health <= 0)
         {
+            GameObject
+                .Find("money")
+                .GetComponent<MoneyBehavior>()
+                .AddMoney(strength);
             LifeToZero();
         }
     }

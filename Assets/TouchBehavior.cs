@@ -7,12 +7,19 @@ public class TouchBehavior : MonoBehaviour
     [SerializeField]
     private GameObject weapon;
 
+    [SerializeField]
+    private int value;
+
     private GameObject instance;
 
     private void OnMouseDown()
     {
         instance = Instantiate(weapon, transform.position, transform.rotation);
         instance.GetComponent<Collider2D>().enabled = false;
+        GameObject
+            .Find("money")
+            .GetComponent<MoneyBehavior>()
+            .SubtractMoney(value);
     }
 
     private void OnMouseDrag()
