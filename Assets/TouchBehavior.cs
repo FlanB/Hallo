@@ -7,15 +7,41 @@ public class TouchBehavior : MonoBehaviour
     [SerializeField]
     private GameObject weapon;
 
-    private void Update()
+    private GameObject instance;
+
+    private void OnMouseDown()
     {
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-        }
+        instance = Instantiate(weapon, transform.position, transform.rotation);
+        instance.GetComponent<Collider2D>().enabled = false;
     }
-    // private void OnMouseDown()
+
+    private void OnMouseDrag()
+    {
+        instance.transform.position =
+            Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        instance.transform.position =
+            new Vector3(instance.transform.position.x,
+                instance.transform.position.y,
+                0);
+    }
+
+    private void OnMouseUp()
+    {
+        instance.GetComponent<Collider2D>().enabled = true;
+    }
+
+    // private void Update()
     // {
-    //     Instantiate(weapon, transform.position, Quaternion.identity);
+    //     if (Input.GetMouseButtonDown(0))
+    //     {
+    //         instance =
+    //             Instantiate(weapon, transform.position, transform.rotation);
+    //     }
+    //     if (Input.GetMouseButton(0))
+    //     {
+    //         Vector2 touchPos =
+    //             Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //         instance.transform.position = touchPos;
+    //     }
     // }
 }
