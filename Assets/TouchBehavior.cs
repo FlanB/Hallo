@@ -12,37 +12,54 @@ public class TouchBehavior : MonoBehaviour
 
     private GameObject instance;
 
+    private bool isTake = false;
+
     private void OnMouseDown()
     {
-        instance = Instantiate(weapon, transform.position, transform.rotation);
-        instance.GetComponent<Collider2D>().enabled = false;
-        GameObject
-            .Find("money")
-            .GetComponent<MoneyBehavior>()
-            .SubtractMoney(value);
+        if (
+            GameObject.Find("money").GetComponent<MoneyBehavior>().GetMoney() >=
+            value
+        )
+        {
+            isTake = true;
+            instance =
+                Instantiate(weapon, transform.position, transform.rotation);
+            instance.GetComponent<Collider2D>().enabled = false;
+            GameObject
+                .Find("money")
+                .GetComponent<MoneyBehavior>()
+                .SubtractMoney(value);
+        }
     }
 
     private void OnMouseDrag()
     {
-        instance.transform.position =
-            Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        instance.transform.position =
-            new Vector3(instance.transform.position.x,
-                instance.transform.position.y,
-                0);
+        if (isTake)
+        {
+            instance.transform.position =
+                Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            instance.transform.position =
+                new Vector3(instance.transform.position.x,
+                    instance.transform.position.y,
+                    0);
+        }
     }
 
     private void OnMouseUp()
     {
-        instance.GetComponent<Collider2D>().enabled = true;
-        instance.transform.position =
-            new Vector3(Mathf.Round(instance.transform.position.x),
-                Mathf.Round(instance.transform.position.y),
-                0);
-        if (instance.transform.position.y < -3)
+        if (isTake)
         {
+            instance.GetComponent<Collider2D>().enabled = true;
             instance.transform.position =
-                new Vector3(instance.transform.position.x, -2.5f, 0);
+                new Vector3(Mathf.Round(instance.transform.position.x),
+                    Mathf.Round(instance.transform.position.y),
+                    0);
+            if (instance.transform.position.y < -3)
+            {
+                instance.transform.position =
+                    new Vector3(instance.transform.position.x, -2.5f, 0);
+            }
+            isTake = false;
         }
     }
 }

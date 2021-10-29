@@ -8,7 +8,6 @@ public class MoneyBehavior : MonoBehaviour
     [SerializeField]
     private int money;
 
-
     private void Start()
     {
     }
@@ -16,6 +15,11 @@ public class MoneyBehavior : MonoBehaviour
     private void Update()
     {
         gameObject.GetComponent<Text>().text = money.ToString();
+    }
+
+    public int GetMoney()
+    {
+        return money;
     }
 
     public void AddMoney(int amount)

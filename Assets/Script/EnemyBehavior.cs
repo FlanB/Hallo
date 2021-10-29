@@ -16,8 +16,6 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField]
     private int strength;
 
-  
-
     void Update()
     {
         MoveDown();
