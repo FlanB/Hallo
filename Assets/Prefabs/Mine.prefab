@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  strength: 0
+  strength: 100
 --- !u!61 &5548779538619136427
 BoxCollider2D:
   m_ObjectHideFlags: 0
