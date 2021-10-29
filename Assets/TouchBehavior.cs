@@ -9,9 +9,9 @@ public class TouchBehavior : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0)
         {
-            Destroy (gameObject);
+            Touch touch = Input.GetTouch(0);
         }
     }
     // private void OnMouseDown()
