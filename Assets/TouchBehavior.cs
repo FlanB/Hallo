@@ -32,20 +32,10 @@ public class TouchBehavior : MonoBehaviour
             new Vector3(Mathf.Round(instance.transform.position.x),
                 Mathf.Round(instance.transform.position.y),
                 0);
+        if (instance.transform.position.y < -3)
+        {
+            instance.transform.position =
+                new Vector3(instance.transform.position.x, -2.5f, 0);
+        }
     }
-
-    // private void Update()
-    // {
-    //     if (Input.GetMouseButtonDown(0))
-    //     {
-    //         instance =
-    //             Instantiate(weapon, transform.position, transform.rotation);
-    //     }
-    //     if (Input.GetMouseButton(0))
-    //     {
-    //         Vector2 touchPos =
-    //             Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //         instance.transform.position = touchPos;
-    //     }
-    // }
 }
