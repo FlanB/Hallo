@@ -28,6 +28,10 @@ public class TouchBehavior : MonoBehaviour
     private void OnMouseUp()
     {
         instance.GetComponent<Collider2D>().enabled = true;
+        instance.transform.position =
+            new Vector3(Mathf.Round(instance.transform.position.x),
+                Mathf.Round(instance.transform.position.y),
+                0);
     }
 
     // private void Update()
