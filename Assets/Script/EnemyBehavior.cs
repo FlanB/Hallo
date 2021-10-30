@@ -16,6 +16,11 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField]
     private int strength;
 
+    public void multiplyHealth(float newHealth)
+    {
+        health *= newHealth;
+    }
+
     private void Update()
     {
         MoveDown();

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8759367828958557123}
   - component: {fileID: 7736009479818239218}
   m_Layer: 0
-  m_Name: Zombie
+  m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -1717829509
   m_SortingLayer: 2
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 9b5a8d792571f84499fea6f93a5b3eef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 393bc42b01cb46f439c26af2a6827a4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: -4421262232429659590}
   speed: 1.25
-  health: 5
+  health: 8
   strength: 5
 --- !u!50 &-4421262232429659590
 Rigidbody2D:
@@ -133,7 +133,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.2297126}
@@ -159,7 +159,7 @@ Animator:
   m_GameObject: {fileID: 3944147676738734925}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f24736cd6902a204bab0e2d8add77266, type: 2}
+  m_Controller: {fileID: 9100000, guid: f4210002f239f53469d1bddf9e6cff8b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

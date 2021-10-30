@@ -119,15 +119,15 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(SpawnEnemy());
         foreach (GameObject item in type1Enemies)
         {
-            item.GetComponent<EnemyBehavior>().health *= 1.5f;
+            item.GetComponent<EnemyBehavior>().multiplyHealth(1.1f);
         }
         foreach (GameObject item in type2Enemies)
         {
-            item.GetComponent<EnemyBehavior>().health *= 1.25f;
+            item.GetComponent<EnemyBehavior>().multiplyHealth(1.05f);
         }
         foreach (GameObject item in type3Enemies)
         {
-            item.GetComponent<EnemyBehavior>().health *= 1.10f;
+            item.GetComponent<EnemyBehavior>().multiplyHealth(1.025f);
         }
     }
 

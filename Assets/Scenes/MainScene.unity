@@ -489,6 +489,7 @@ MonoBehaviour:
   - {fileID: 3944147676738734925, guid: 078b615900a786c4092cd2c35784cd34, type: 3}
   type2Enemies:
   - {fileID: 662702654487115140, guid: da9b7730ed85a244e9a51912e7ec22af, type: 3}
+  - {fileID: 3944147676738734925, guid: 488a92982cc331e4ea0269efa4692d92, type: 3}
   type3Enemies:
   - {fileID: 984607912936161316, guid: fb77937f053a61a439bc11fc19c2303e, type: 3}
   waveText: {fileID: 936319931}
