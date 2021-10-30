@@ -11,6 +11,7 @@ public class SwitchScene : MonoBehaviour
     public void NextScene()
     {
         SceneManager.LoadScene (SceneName);
+        Time.timeScale = 1;
     }
 
     public void QuitGame()
