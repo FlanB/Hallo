@@ -15,7 +15,7 @@ public class LifeBehavior : MonoBehaviour
         totalLife = (int) life;
     }
 
-    public void LoseLife(int damage)
+    public void LoseLife(float damage)
     {
         //passage en pourcentage
         life = life - damage;

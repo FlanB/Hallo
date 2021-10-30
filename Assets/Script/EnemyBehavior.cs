@@ -11,12 +11,12 @@ public class EnemyBehavior : MonoBehaviour
     private float speed;
 
     [SerializeField]
-    private int health;
+    public float health;
 
     [SerializeField]
     private int strength;
 
-    void Update()
+    private void Update()
     {
         MoveDown();
 

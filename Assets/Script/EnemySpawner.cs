@@ -117,11 +117,23 @@ public class EnemySpawner : MonoBehaviour
         waveText.text = "Vague " + (wave);
         Converter();
         StartCoroutine(SpawnEnemy());
+        foreach (GameObject item in type1Enemies)
+        {
+            item.GetComponent<EnemyBehavior>().health *= 1.5f;
+        }
+        foreach (GameObject item in type2Enemies)
+        {
+            item.GetComponent<EnemyBehavior>().health *= 1.25f;
+        }
+        foreach (GameObject item in type3Enemies)
+        {
+            item.GetComponent<EnemyBehavior>().health *= 1.10f;
+        }
     }
 
     private IEnumerator Chrono()
     {
-        float minusTime = wave * 2;
+        float minusTime = 10;
         float deltaTime = time;
         while (time < deltaTime + minusTime)
         {
