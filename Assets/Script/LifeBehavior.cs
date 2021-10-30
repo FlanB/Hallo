@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LifeBehavior : MonoBehaviour
 {
@@ -19,5 +20,13 @@ public class LifeBehavior : MonoBehaviour
         //passage en pourcentage
         life = life - damage;
         transform.localScale = new Vector3(life / totalLife, 1, 1);
+    }
+
+    private void Update()
+    {
+        if (life <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }
