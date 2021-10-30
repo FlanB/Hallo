@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.SceneManagement;
- 
-public class Control : MonoBehaviour
+
+public class SwitchScene : MonoBehaviour
 {
-    private const string SceneName = "MainScene";
+    [SerializeField]
+    private string SceneName = "MainScene";
 
     public void NextScene()
     {
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene (SceneName);
     }
 }
