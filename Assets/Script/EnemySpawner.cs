@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
 
     private int type3;
 
-    private int wave = 1;
+    public static int wave = 1;
 
     private float time;
 
