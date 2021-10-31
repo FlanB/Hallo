@@ -483,7 +483,7 @@ MonoBehaviour:
   spawnTime: 2
   incrementWaveStrength: 10
   type1ToType2: 11
-  type2ToType3: 5
+  type2ToType3: 15
   type1Enemies:
   - {fileID: 2536552465113431094, guid: d491c58d6d381a142b9359b4fca43c69, type: 3}
   - {fileID: 3944147676738734925, guid: 078b615900a786c4092cd2c35784cd34, type: 3}
@@ -5252,8 +5252,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1080
-    height: 1920
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
