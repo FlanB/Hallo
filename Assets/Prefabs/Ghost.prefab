@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: -4421262232429659590}
   speed: 1.25
-  health: 8
+  health: 6
   strength: 5
 --- !u!50 &-4421262232429659590
 Rigidbody2D:

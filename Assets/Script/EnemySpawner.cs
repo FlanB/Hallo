@@ -117,9 +117,10 @@ public class EnemySpawner : MonoBehaviour
         waveText.text = "Vague " + (wave);
         Converter();
         StartCoroutine(SpawnEnemy());
+        GameObject.Find("money").GetComponent<MoneyBehavior>().AddMoney(wave * 10);
         foreach (GameObject item in type1Enemies)
         {
-            item.GetComponent<EnemyBehavior>().multiplyHealth(1.1f);
+            item.GetComponent<EnemyBehavior>().multiplyHealth(1.2f);
         }
         foreach (GameObject item in type2Enemies)
         {
