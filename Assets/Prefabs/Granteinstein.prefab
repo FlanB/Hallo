@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: -2819538431205138239}
-  speed: 0.75
+  speed: 0.5
   health: 40
   strength: 20
 --- !u!50 &-2819538431205138239

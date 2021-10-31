@@ -68,6 +68,7 @@ public class EnemyBehavior : MonoBehaviour
 
         while (DB.getHealth() > 0)
         {
+            gameObject.GetComponent<Animator>().SetBool("isAttacking", true);
             DB.TakeDamage (strength);
             yield return new WaitForSeconds(1);
         }
@@ -84,13 +85,5 @@ public class EnemyBehavior : MonoBehaviour
         other.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         other.color = Color.white;
-    }
-
-    private IEnumerator FlashCamera()
-    {
-        Camera.main.backgroundColor = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        Camera.main.backgroundColor = new Color32(49, 121, 99, 255);
-        LifeToZero();
     }
 }
