@@ -25,10 +25,25 @@ public class MoneyBehavior : MonoBehaviour
     public void AddMoney(int amount)
     {
         money += amount;
+        StartCoroutine(greenFlash(gameObject.GetComponent<Text>()));
     }
 
     public void SubtractMoney(int amount)
     {
         money -= amount;
+        StartCoroutine(redFlash(gameObject.GetComponent<Text>()));
+    }
+
+    private IEnumerator redFlash(Text other)
+    {
+        other.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        other.color = Color.black;
+    }
+    private IEnumerator greenFlash(Text other)
+    {
+        other.color = Color.green;
+        yield return new WaitForSeconds(0.2f);
+        other.color = Color.black;
     }
 }
