@@ -6,6 +6,7 @@ public class TurretBehavior : DefenseBehavior
 {
     [SerializeField]
     private GameObject projectile;
+
     [SerializeField]
     private int projectileFrequency;
 
@@ -18,7 +19,9 @@ public class TurretBehavior : DefenseBehavior
     {
         while (true)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            Instantiate(projectile,
+            transform.position + new Vector3(0, 0.5f, 0),
+            Quaternion.identity);
             yield return new WaitForSeconds(projectileFrequency);
         }
     }
