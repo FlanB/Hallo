@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class JakoBehavior : EnemyBehavior
 {
-    [SerializeField] GameObject skeletonToSpawn;
-    
-        // Start is called before the first frame update
-    void Start()
-    {
-    }
+    [SerializeField]
+    GameObject skeletonToSpawn;
+
+    private bool once = false;
 
     public override void LifeToZero()
     {
-        for (int i = 0; i < 2; i++)
+        if (!once)
         {
-            Instantiate(skeletonToSpawn, transform.position, Quaternion.identity);
+            for (int i = 0; i < 2; i++)
+            {
+                Instantiate(skeletonToSpawn,
+                transform.position,
+                Quaternion.identity);
+            }
+            once = true;
         }
-            base.LifeToZero();
-
+        base.LifeToZero();
     }
-
 }

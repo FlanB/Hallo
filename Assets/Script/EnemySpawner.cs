@@ -111,6 +111,10 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator WaveTransition()
     {
+        GameObject
+            .Find("money")
+            .GetComponent<MoneyBehavior>()
+            .AddMoney(wave * 10);
         StartCoroutine(Chrono());
         yield return new WaitForSeconds(wave * 2);
         incrementWaveStrength *= 2;
@@ -118,10 +122,6 @@ public class EnemySpawner : MonoBehaviour
         waveText.text = "Vague " + (wave);
         Converter();
         StartCoroutine(SpawnEnemy());
-        GameObject
-            .Find("money")
-            .GetComponent<MoneyBehavior>()
-            .AddMoney(wave * 10);
         foreach (GameObject item in type1Enemies)
         {
             item.GetComponent<EnemyBehavior>().multiplyHealth(1.2f);

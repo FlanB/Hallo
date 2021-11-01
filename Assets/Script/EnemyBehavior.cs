@@ -19,6 +19,8 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
 
+    private bool once = false;
+
     public void multiplyHealth(float newHealth)
     {
         health *= newHealth;
@@ -38,10 +40,14 @@ public class EnemyBehavior : MonoBehaviour
         }
         if (health <= 0)
         {
-            GameObject
-                .Find("money")
-                .GetComponent<MoneyBehavior>()
-                .AddMoney(strength);
+            if (!once)
+            {
+                GameObject
+                    .Find("money")
+                    .GetComponent<MoneyBehavior>()
+                    .AddMoney(strength);
+                once = true;
+            }
             LifeToZero();
         }
     }
@@ -55,7 +61,7 @@ public class EnemyBehavior : MonoBehaviour
     IEnumerator DestroyEnemy()
     {
         yield return new WaitForSeconds(0.2f);
-        Destroy(gameObject);
+        Destroy (gameObject);
     }
 
     public void MoveDown()
@@ -78,9 +84,9 @@ public class EnemyBehavior : MonoBehaviour
 
         while (DB.getHealth() > 0)
         {
+            yield return new WaitForSeconds(1);
             gameObject.GetComponent<Animator>().SetBool("isAttacking", true);
             DB.TakeDamage (strength);
-            yield return new WaitForSeconds(1);
         }
         gameObject.GetComponent<Animator>().SetBool("isAttacking", false);
     }
