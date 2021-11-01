@@ -128,11 +128,11 @@ public class EnemySpawner : MonoBehaviour
         }
         foreach (GameObject item in type2Enemies)
         {
-            item.GetComponent<EnemyBehavior>().multiplyHealth(1.05f);
+            item.GetComponent<EnemyBehavior>().multiplyHealth(1.2f);
         }
         foreach (GameObject item in type3Enemies)
         {
-            item.GetComponent<EnemyBehavior>().multiplyHealth(1.025f);
+            item.GetComponent<EnemyBehavior>().multiplyHealth(1.2f);
         }
     }
 
