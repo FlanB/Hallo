@@ -16,6 +16,9 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField]
     private int strength;
 
+    [SerializeField]
+    private AudioSource audioSource;
+
     public void multiplyHealth(float newHealth)
     {
         health *= newHealth;
@@ -45,7 +48,14 @@ public class EnemyBehavior : MonoBehaviour
 
     public virtual void LifeToZero()
     {
-        Destroy (gameObject);
+        audioSource.Play();
+        StartCoroutine(DestroyEnemy());
+    }
+
+    IEnumerator DestroyEnemy()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
     }
 
     public void MoveDown()

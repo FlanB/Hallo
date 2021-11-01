@@ -7,6 +7,9 @@ public class DefenseBehavior : MonoBehaviour
     [SerializeField]
     private int health;
 
+    [SerializeField]
+    protected AudioSource audioSource;
+
 
     // Update is called once per frame
     void Update()

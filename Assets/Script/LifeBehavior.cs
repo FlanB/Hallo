@@ -8,6 +8,9 @@ public class LifeBehavior : MonoBehaviour
     [SerializeField]
     private float life;
 
+    [SerializeField]
+    private AudioSource audioSource;
+
     private int totalLife;
 
     private void Start()
@@ -20,6 +23,7 @@ public class LifeBehavior : MonoBehaviour
         //passage en pourcentage
         life = life - damage;
         transform.localScale = new Vector3(life / totalLife, 1, 1);
+        audioSource.Play();
     }
 
     private void Update()

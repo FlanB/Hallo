@@ -13,11 +13,8 @@ public class BulletBehavior : MonoBehaviour
     [SerializeField]
     private int strength;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
+    [SerializeField]
+    private AudioSource audioSource;
 
     // Update is called once per frame
     void Update()
@@ -38,11 +35,18 @@ public class BulletBehavior : MonoBehaviour
     {
         if (collider.gameObject.tag == "Enemy")
         {
+            audioSource.Play();
             collider
                 .gameObject
                 .GetComponent<EnemyBehavior>()
                 .TakeDamage(strength);
-            Destroy (gameObject);
+                StartCoroutine(DestroyBullet());
         }
+    }
+
+    private IEnumerator DestroyBullet()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy (gameObject);
     }
 }

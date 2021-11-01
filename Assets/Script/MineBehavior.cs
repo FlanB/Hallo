@@ -11,6 +11,7 @@ public class MineBehavior : DefenseBehavior
     {
         if (collider.gameObject.tag == "Enemy")
         {
+            audioSource.Play();
             gameObject.GetComponent<Animator>().SetTrigger("Explode");
             collider
                 .gameObject
