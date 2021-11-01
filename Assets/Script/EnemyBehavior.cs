@@ -72,6 +72,7 @@ public class EnemyBehavior : MonoBehaviour
             DB.TakeDamage (strength);
             yield return new WaitForSeconds(1);
         }
+        gameObject.GetComponent<Animator>().SetBool("isAttacking", false);
     }
 
     public void TakeDamage(int damage)
