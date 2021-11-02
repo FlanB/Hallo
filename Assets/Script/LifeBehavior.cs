@@ -13,6 +13,8 @@ public class LifeBehavior : MonoBehaviour
 
     private int totalLife;
 
+    private bool once = false;
+
     private void Start()
     {
         totalLife = (int) life;
@@ -21,9 +23,12 @@ public class LifeBehavior : MonoBehaviour
     public void LoseLife(float damage)
     {
         //passage en pourcentage
-        life = life - damage;
-        transform.localScale = new Vector3(life / totalLife, 1, 1);
-        audioSource.Play();
+        if (!once)
+        {
+            life = life - damage;
+            transform.localScale = new Vector3(life / totalLife, 1, 1);
+            audioSource.Play();
+        }
     }
 
     private void Update()

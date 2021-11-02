@@ -29,26 +29,26 @@ public class EnemyBehavior : MonoBehaviour
     private void Update()
     {
         MoveDown();
-
-        if (transform.position.y < -5)
+        if (!once)
         {
-            GameObject
-                .Find("Ancre")
-                .GetComponent<LifeBehavior>()
-                .LoseLife(health);
-            LifeToZero();
-        }
-        if (health <= 0)
-        {
-            if (!once)
+            if (transform.position.y < -5)
+            {
+                GameObject
+                    .Find("Ancre")
+                    .GetComponent<LifeBehavior>()
+                    .LoseLife(health);
+                LifeToZero();
+                once = true;
+            }
+            if (health <= 0)
             {
                 GameObject
                     .Find("money")
                     .GetComponent<MoneyBehavior>()
                     .AddMoney(strength);
+                LifeToZero();
                 once = true;
             }
-            LifeToZero();
         }
     }
 

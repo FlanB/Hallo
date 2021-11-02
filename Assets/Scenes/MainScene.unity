@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580096df1c939f949aec80b70d65095f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 2
+  spawnTime: 1
   incrementWaveStrength: 10
   type1ToType2: 11
   type2ToType3: 15
@@ -8084,7 +8084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7201ceb46d4a2934aa6fcc8a481ff53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 200
+  life: 400
   audioSource: {fileID: 2060725788}
 --- !u!82 &2060725788
 AudioSource:

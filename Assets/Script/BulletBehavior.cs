@@ -20,7 +20,7 @@ public class BulletBehavior : MonoBehaviour
     void Update()
     {
         MoveUp();
-        if (transform.position.y > 7)
+        if (transform.position.y > 5)
         {
             Destroy (gameObject);
         }
