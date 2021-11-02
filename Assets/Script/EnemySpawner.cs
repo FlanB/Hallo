@@ -138,7 +138,8 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator Chrono()
     {
-        float minusTime = 10;
+        spawnTime = spawnTime * 1.1f;
+        float minusTime = 10 * wave / 10;
         float deltaTime = time;
         while (time < deltaTime + minusTime)
         {
